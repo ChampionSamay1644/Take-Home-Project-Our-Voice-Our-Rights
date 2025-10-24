@@ -1,7 +1,15 @@
 // API Configuration
-// Get your own API key from: https://data.gov.in/
+// API key is now securely stored in Vercel environment variables
+// Accessed via serverless function at /api/mgnrega
+
 const API_CONFIG = {
-    API_KEY: '579b464db66ec23bdd0000017e2d4182222747d35434fcf965851e36',
-    BASE_URL: 'https://api.data.gov.in/resource/ee03643a-ee4c-48c2-ac30-9f2ff26ab722',
+    // Use Vercel serverless function (no API key exposed to client)
+    BASE_URL: '/api/mgnrega',
+    
+    // Fallback: For local development, you can use direct API
+    // Comment this out before deploying to production
+    // DIRECT_API_URL: 'https://api.data.gov.in/resource/ee03643a-ee4c-48c2-ac30-9f2ff26ab722',
+    // DIRECT_API_KEY: 'YOUR_KEY_HERE', // Only for local testing
+    
     FORMAT: 'json'
 };

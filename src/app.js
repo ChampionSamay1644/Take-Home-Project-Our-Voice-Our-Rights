@@ -109,15 +109,25 @@ const districtSelector = document.getElementById('district-selector');
 const dashboard = document.getElementById('dashboard');
 
 // --- API Functions ---
-async function fetchMGNREGAData(stateName = null, limit = 1000) {
+async function fetchMGNREGAData(stateName = null, districtName = null, limit = 1000) {
     try {
-        let url = `${API_CONFIG.BASE_URL}?api-key=${API_CONFIG.API_KEY}&format=${API_CONFIG.FORMAT}&limit=${limit}`;
+        // Build URL for Vercel serverless function
+        const params = new URLSearchParams({
+            'limit': limit,
+            'offset': '0'
+        });
         
         if (stateName) {
-            url += `&filters[state_name]=${encodeURIComponent(stateName)}`;
+            params.append('state', stateName);
         }
         
-        console.log('Fetching from:', url);
+        if (districtName) {
+            params.append('district', districtName);
+        }
+        
+        const url = `${API_CONFIG.BASE_URL}?${params.toString()}`;
+        
+        console.log('Fetching from serverless function:', url);
         const response = await fetch(url);
         
         if (!response.ok) {
