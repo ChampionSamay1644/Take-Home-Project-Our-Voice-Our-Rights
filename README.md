@@ -204,14 +204,6 @@ Essential Files (42 KB):
 
 ---
 
-## 🔑 API Configuration
-
-**Endpoint**: `https://api.data.gov.in/resource/ee03643a-ee4c-48c2-ac30-9f2ff26ab722`
-
-**API Key**: `579b464db66ec23bdd0000017e2d4182222747d35434fcf965851e36`
-
----
-
 ## 📈 Impact
 
 **Serving 12.15 Crore rural Indians nationwide** with:
@@ -221,9 +213,3 @@ Essential Files (42 KB):
 - Inclusion for low-literacy populations
 
 **Our Voice, Our Rights** - Every citizen deserves to understand how government programs serve them.
-
----
-
-*Complete architecture details: `docs/PRODUCTION_READY.md`*
-
-*Video script: `SCRIPT.md`*
